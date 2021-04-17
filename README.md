@@ -4,6 +4,10 @@ Using the component allows you to easily render https://adaptivecards.io/ in you
 
 For more information about Adaptive Cards read this: https://docs.microsoft.com/en-us/adaptive-cards
 
+# Versioning changed!
+You might have noticed the version made a big jump, thats because we want to be inline with supported
+AdaptiveCards version which currently is 2.9.0
+
 # Installation
 
 ```
@@ -36,7 +40,6 @@ export default {
     <adaptive-card 
     :card="card" 
     :data="data"
-    :cardUrl="cardUrl"
     :useTemplating="true"
     v-on:onActionClicked="onItemClick"
   />
@@ -54,6 +57,11 @@ When using a template, pass in data for the template as object or json
 Read: https://docs.microsoft.com/en-us/adaptive-cards/templating/ for a guide about templating
 Also: https://medium.com/@tim.cadenbach/why-templating-for-adaptive-cards-is-a-game-changer-1606de3226ed
 might help. 
+
+**NOTE:** Breaking Change!
+When using the most recent AdaptiveCards Templating package you have to update your templates. 
+
+Instead of using {$root.data} you now have to use ${$root.data}
 
 __:useTemplating__
 

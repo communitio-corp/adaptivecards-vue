@@ -2,16 +2,17 @@ var path = require('path')
 var merge = require('webpack-merge')
 var baseConfig = require('./webpack.config.base')
 var MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const webpack = require('webpack')
 module.exports = merge(baseConfig, {
   mode: 'production',
   entry: './src/index.js',
   output: {
-    library: 'adaptive-cards-vue',
+    library: 'adaptivecards-vue',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'adaptive-cards-vue.js'
+    filename: 'adaptivecards-vue.js'
   },
   externals: {
     'vue': 'Vue'
@@ -25,21 +26,14 @@ module.exports = merge(baseConfig, {
           'css-loader',
           'postcss-loader'
         ]
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader',
-          'sass-loader'
-        ]
       }
     ]
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'adaptive-cards-vue.css'
-    })
+      filename: 'adaptivecards-vue.css'
+    }),
+    new BundleAnalyzerPlugin(),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ]
 })

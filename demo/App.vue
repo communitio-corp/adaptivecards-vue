@@ -12,46 +12,51 @@
           </a>
         </h1>
         <p>Adaptive Cards in Vue.js</p>
+        <button @click="update">
+          Add 1
+        </button>
         <hr style="margin: 50px 0px;border: 1px solid #e3e3e3;">
       </div>
-      <adaptive-card 
-        :card="card" 
+      {{ data.title }}
+      <adaptive-cards
+        :card="card"
         :data="data"
-        :cardUrl="cardUrl"
-        :useTemplating="true"
-        v-on:onActionClicked="onItemClick"
+        :use-templating="true"
+        :host-config="config"
+        @onActionClicked="onItemClick"
       />
     </div>
   </div>
 </template>
 
 <script>
-import SampleCard from '../src/assets/exampleCard.json';
-import SampleData from '../src/assets/exampleData.json';
+import SampleCard from '../src/assets/exampleCard.json'
+import SampleData from '../src/assets/exampleData.json'
+import HostConfig from '../src/assets/exampleHostConfig2.json'
 export default {
   name: 'App',
-  components:[
-    SampleCard,
-    SampleData
-  ],
   data () {
     return {
       data: SampleData,
       card: SampleCard,
+      config: HostConfig,
       cardUrl: 'https://templates.adaptivecards.io/teamwork.com/projects/task.json'
     }
   },
   methods: {
     onItemClick (event, item) {
-      alert(event);
-      alert(item);
+      alert(event)
+      alert(item)
+    },
+    update () {
+      console.log('triggered!')
+      this.data.title = 'Data Was changed!'
     }
   }
 }
 </script>
 
-<style lang="scss">
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
+<style lang="css">
 
 body,
 html {
