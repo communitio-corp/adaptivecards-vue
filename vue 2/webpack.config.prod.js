@@ -35,5 +35,9 @@ module.exports = merge(baseConfig, {
     }),
     new BundleAnalyzerPlugin(),
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
-  ]
+  ],
+  optimization: {
+    nodeEnv: 'production',
+    minimize: true
+  }
 })

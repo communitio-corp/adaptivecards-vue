@@ -6,12 +6,16 @@ For more information about Adaptive Cards read this: https://docs.microsoft.com/
 
 # Versioning changed!
 You might have noticed the version made a big jump, thats because we want to be inline with supported
-AdaptiveCards version which currently is 2.9.0
+AdaptiveCards version which currently is 2.10.0
+
+All AdaptiveCard version from 1.0 to 1.5 are supported
 
 # Installation
 
 ```
-npm i adaptivecards-vue --save
+npm i @madewithcards/adaptivecards-vue --save //vue2
+npm i @madewithcards/adaptivecards-vue3 --save //vue3
+
 ```
 
 After adding the library:
@@ -58,11 +62,6 @@ Read: https://docs.microsoft.com/en-us/adaptive-cards/templating/ for a guide ab
 Also: https://medium.com/@tim.cadenbach/why-templating-for-adaptive-cards-is-a-game-changer-1606de3226ed
 might help. 
 
-**NOTE:** Breaking Change!
-When using the most recent AdaptiveCards Templating package you have to update your templates. 
-
-Instead of using {$root.data} you now have to use ${$root.data}
-
 __:useTemplating__
 
 When passing in a template set to true
@@ -76,9 +75,5 @@ __onActionClicked__
 
 Will be send for any card with actions whenever an action is used
 
-
-# Future improvements
-Upcoming changes:
-* Load card from remote sources 50% finished
 
 

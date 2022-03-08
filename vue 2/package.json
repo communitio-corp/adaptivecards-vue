@@ -1,7 +1,7 @@
 {
   "name": "@madewithcards/adaptivecards-vue",
   "description": "Render cards in vue easily",
-  "version": "2.9.0",
+  "version": "2.10.0",
   "author": "Tim Cadenbach <tim@madewithcards.io>",
   "license": "MIT",
   "main": "dist/adaptivecards-vue.js",
@@ -27,8 +27,9 @@
     "lint": "eslint --ext .js,.vue ."
   },
   "dependencies": {
-    "adaptivecards": "^2.9.0",
-    "adaptivecards-templating": "^2.1.0",
+    "adaptivecards": "^2.10.0",
+    "adaptivecards-templating": "^2.2.0",
+    "adaptive-expressions": "^4.15.0",
     "vue": "^2.5.21"
   },
   "postcss": {
@@ -42,7 +43,6 @@
     "not ie <= 8"
   ],
   "devDependencies": {
-    "adaptive-expressions": "^4.13.0",
     "autoprefixer": "^9.4.4",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
