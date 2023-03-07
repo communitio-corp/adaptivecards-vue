@@ -2,319 +2,350 @@
   <div />
 </template>
 <style type="text/css">
-
-.ac-media-poster {}
-
-.ac-media-poster.empty {
-    height: 200px;
-    background-color: #F2F2F2;
+.ac-media-poster {
 }
 
-.th, td  {
-    border:none !important;
+.ac-media-poster.empty {
+  height: 200px;
+  background-color: #f2f2f2;
+}
+
+.th,
+td {
+  border: none !important;
 }
 
 .ac-fact-title,
-.ac-fact-value{
-    border: none !important;
+.ac-fact-value {
+  border: none !important;
 }
 
 .ac-media-playButton {
-    width: 56px;
-    height: 56px;
-    border: 1px solid #EEEEEE;
-    border-radius: 28px;
-    box-shadow: 0px 0px 10px #EEEEEE;
-    background-color: rgba(255, 255, 255, 0.9);
-    color: black;
-    cursor: pointer;
+  width: 56px;
+  height: 56px;
+  border: 1px solid #eeeeee;
+  border-radius: 28px;
+  box-shadow: 0px 0px 10px #eeeeee;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  cursor: pointer;
 }
 
 .ac-media-playButton-arrow {
-    color: black;
+  color: black;
 }
 
 .ac-media-playButton:hover {
-    background-color: white;
+  background-color: white;
 }
 
 .ac-image.ac-selectable {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .ac-image.ac-selectable:hover {
-    background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .ac-image.ac-selectable:active {
-    background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 a.ac-anchor {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 a.ac-anchor:link {
-    color: #6264A7;
+  color: #6264a7;
 }
 
 a.ac-anchor:visited {
-    color: #6264A7;
+  color: #6264a7;
 }
 
 a.ac-anchor:link:active {
-    color: #6264A7;
+  color: #6264a7;
 }
 
 a.ac-anchor:visited:active {
-    color: #6264A7;
+  color: #6264a7;
 }
 
-.ac-container.ac-selectable, .ac-columnSet.ac-selectable {
-    padding: 0px;
+.ac-container.ac-selectable,
+.ac-columnSet.ac-selectable {
+  padding: 0px;
 }
 
-.ac-container th{
-    border:none !important;
+.ac-container th {
+  border: none !important;
 }
 
-.ac-container th,td{
-    border:none !important;
+.ac-container th,
+td {
+  border: none !important;
 }
 
-.ac-container tr{
-    border:none !important;
+.ac-container tr {
+  border: none !important;
 }
 
-.ac-container.ac-selectable:hover, .ac-columnSet.ac-selectable:hover {
-    background-color: rgba(0, 0, 0, 0.1) !important;
+.ac-container.ac-selectable:hover,
+.ac-columnSet.ac-selectable:hover {
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-.ac-container.ac-selectable:active, .ac-columnSet.ac-selectable:active {
-    background-color: rgba(0, 0, 0, 0.15) !important;
+.ac-container.ac-selectable:active,
+.ac-columnSet.ac-selectable:active {
+  background-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 .ac-pushButton {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    vertical-align: middle;
-    cursor: default;
-    font-family: "Segoe UI", sans-serif;
-    font-size: 14px;
-    padding: 4px 10px 5px 10px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    height: 32px;
-    background-color: white;
-    color: #6264A7;
-    border: 2px solid #BFC0DA;
-    border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  vertical-align: middle;
+  cursor: default;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  padding: 4px 10px 5px 10px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  height: 32px;
+  background-color: white;
+  color: #6264a7;
+  border: 2px solid #bfc0da;
+  border-radius: 4px;
 }
 
 .ac-pushButton:hover {
-    background-color: #6264A7;
-    border: 2px solid #6264A7;
-    color: white;
+  background-color: #6264a7;
+  border: 2px solid #6264a7;
+  color: white;
 }
 
 .ac-pushButton:active {
-    background-color: #6264A7;
-    border: 2px solid #6264A7;
-    color: white;
+  background-color: #6264a7;
+  border: 2px solid #6264a7;
+  color: white;
 }
 
 .ac-pushButton.expanded {
-    background-color: #6264A7;
-    border: 2px solid #6264A7;
-    color: white;
+  background-color: #6264a7;
+  border: 2px solid #6264a7;
+  color: white;
 }
 
 .ac-pushButton.style-emphasis {
-    background-color: #6264A7;
-    border: 2px solid #6264A7;
-    color: white;
+  background-color: #6264a7;
+  border: 2px solid #6264a7;
+  color: white;
 }
 
 .ac-input {
-    font-family: "Segoe UI", sans-serif;
-    font-size: 14px;
-    color: black;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  color: black;
 }
 
 .ac-input.ac-input-required {
-    background-image: linear-gradient(45deg, transparent, transparent 50%, red 50%, red 100%);
-    background-position: top right;
-    background-size: .5em .5em;
-    background-repeat: no-repeat;
+  background-image: linear-gradient(
+    45deg,
+    transparent,
+    transparent 50%,
+    red 50%,
+    red 100%
+  );
+  background-position: top right;
+  background-size: 0.5em 0.5em;
+  background-repeat: no-repeat;
 }
 
 .ac-input.ac-input-validation-failed {
-    border: 1px solid red !important;
+  border: 1px solid red !important;
 }
 
 .ac-input.ac-textInput {
-    resize: none;
+  resize: none;
 }
 
 .ac-input.ac-textInput.ac-multiline {
-    height: 72px;
+  height: 72px;
 }
 
-.ac-input.ac-textInput, .ac-input.ac-numberInput, .ac-input.ac-dateInput, .ac-input.ac-timeInput {
-    height: 31px;
+.ac-input.ac-textInput,
+.ac-input.ac-numberInput,
+.ac-input.ac-dateInput,
+.ac-input.ac-timeInput {
+  height: 31px;
 }
 
-.ac-input.ac-textInput, .ac-input.ac-numberInput, .ac-input.ac-dateInput, .ac-input.ac-timeInput, .ac-input.ac-multichoiceInput {
-    background-color: #F3F2F1;
-    border: 1px solid #F3F2F1;
-    border-radius: 4px;
-    padding: 4px 8px 4px 8px;
+.ac-input.ac-textInput,
+.ac-input.ac-numberInput,
+.ac-input.ac-dateInput,
+.ac-input.ac-timeInput,
+.ac-input.ac-multichoiceInput {
+  background-color: #f3f2f1;
+  border: 1px solid #f3f2f1;
+  border-radius: 4px;
+  padding: 4px 8px 4px 8px;
 }
 
 /* ac-inlineActionButton should set height to the same as ac-input.ac-textInput */
 
 .ac-inlineActionButton {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    vertical-align: middle;
-    cursor: pointer;
-    font-family: "Segoe UI", sans-serif;
-    font-size: 14px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    border: none;
-    background-color: transparent;
-    height: 31px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 14px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: none;
+  background-color: transparent;
+  height: 31px;
 }
 
 .ac-inlineActionButton.textOnly {
-    padding: 0 8px;
+  padding: 0 8px;
 }
 
 .ac-inlineActionButton.iconOnly {
-    padding: 0;
+  padding: 0;
 }
 
 .ac-inlineActionButton:hover {
-    background-color: #EEEEEE;
+  background-color: #eeeeee;
 }
 
 .ac-inlineActionButton:active {
-    background-color: #CCCCCC;
+  background-color: #cccccc;
 }
-
 </style>
 
 <script>
-import * as AdaptiveCards from 'adaptivecards'
-import * as ACData from 'adaptivecards-templating'
-import HostConfig from '../assets/exampleHostConfig.json'
+import * as AdaptiveCards from "adaptivecards";
+import * as ACData from "adaptivecards-templating";
+import HostConfig from "../assets/exampleHostConfig.json";
+import * as markdown from 'markdown-it';
 
 export default {
-  name: 'AdaptiveCard',
+  name: "AdaptiveCard",
   props: {
     card: {
-      type: [ String, Object ],
+      type: [String, Object],
       required: true,
-      default: null
+      default: null,
     },
     data: {
-      type: [ String, Object ],
+      type: [String, Object],
       required: false,
-      default: null
+      default: null,
     },
     hostConfig: {
-      type: [ String, Object ],
+      type: [String, Object],
       required: false,
-      default: ''
+      default: "",
     },
     useTemplating: {
       type: Boolean,
       required: true,
-      default: true
-    }
+      default: true,
+    },
+    useMarkdown: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
-  data () {
+  data() {
     return {
       cardHolder: null,
-      cardRemoteTemplate: null
-    }
+      cardRemoteTemplate: null,
+    };
   },
   computed: {
-    cardParsed () {
-      if (this.cardRemoteTemplate != null) return this.cardRemoteTemplate
-      return this.card
+    cardParsed() {
+      if (this.cardRemoteTemplate != null) return this.cardRemoteTemplate;
+      return this.card;
     },
-    dataParsed () {
-      return this.data
+    dataParsed() {
+      return this.data;
     },
-    hostConfigParsed () {
-      if (this.hostConfig !== '' && this.hostConfig !== undefined) {
-        return new AdaptiveCards.HostConfig(this.hostConfig)
+    hostConfigParsed() {
+      if (this.hostConfig !== "" && this.hostConfig !== undefined) {
+        return new AdaptiveCards.HostConfig(this.hostConfig);
       } else {
-        return new AdaptiveCards.HostConfig(HostConfig)
+        return new AdaptiveCards.HostConfig(HostConfig);
       }
-    }
+    },
   },
   watch: {
     data: {
-      handler (n, o) {
-        this.renderCard()
+      handler(n, o) {
+        this.renderCard();
       },
-      deep: true
+      deep: true,
     },
     card: {
-      handler (n, o) {
-        this.renderCard()
+      handler(n, o) {
+        this.renderCard();
       },
-      deep: true
+      deep: true,
     },
     hostConfig: {
-      handler (n, o) {
-        this.renderCard()
+      handler(n, o) {
+        this.renderCard();
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
-  mounted () {
-    this.renderCard()
+  mounted() {
+    this.setUpMarkdownIt();
+    this.renderCard();
   },
   methods: {
-    renderCard () {
-      this.cardHolder = new AdaptiveCards.AdaptiveCard()
-      this.cardHolder.hostConfig = this.hostConfigParsed
+    renderCard() {
+      this.cardHolder = new AdaptiveCards.AdaptiveCard();
+      this.cardHolder.hostConfig = this.hostConfigParsed;
 
       if (this.useTemplating && this.data == null) {
-        this.$el.remove()
-        throw new Error('When using templating data is required')
+        this.$el.remove();
+        throw new Error("When using templating data is required");
       }
 
       if (this.useTemplating && this.data != null) {
-        let template = new ACData.Template(this.cardParsed)
-        var context = {}
-        context.$root = this.dataParsed
+        let template = new ACData.Template(this.cardParsed);
+        var context = {};
+        context.$root = this.dataParsed;
 
-        var cardToRender = template.expand(context)
-        this.cardHolder.parse(cardToRender)
+        var cardToRender = template.expand(context);
+        this.cardHolder.parse(cardToRender);
       } else {
-        this.cardHolder.parse(cardToRender)
+        this.cardHolder.parse(cardToRender);
       }
 
       this.cardHolder.onExecuteAction = (action) => {
-        this.$emit('onActionClicked', action, action.data)
+        this.$emit("onActionClicked", action, action.data);
+      };
+
+      this.cardElement = this.cardHolder.render();
+      this.$el.innerHTML = "";
+      this.$el.appendChild(this.cardElement);
+    },
+    setUpMarkdownIt() {
+      if (this.useMarkdown && !AdaptiveCards.AdaptiveCard.onProcessMarkdown) {
+        AdaptiveCards.AdaptiveCard.onProcessMarkdown = (text, result) => {
+          result.outputHtml = new markdown.default().render(text);
+          result.didProcess = true;
+        };
       }
-
-      this.cardElement = this.cardHolder.render()
-      this.$el.innerHTML = ''
-      this.$el.appendChild(this.cardElement)
     }
-  }
-}
-
+  },
+};
 </script>

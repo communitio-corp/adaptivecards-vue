@@ -10,6 +10,7 @@ import * as AdaptiveCards from 'adaptivecards/dist/adaptivecards'
 import { Template, EvaluationContext } from 'adaptivecards-templating/dist/adaptivecards-templating'
 import HostConfig from '../assets/exampleHostConfig.json'
 import axios from 'axios'
+import * as markdown from 'markdown-it';
 
 export default {
   name: 'AdaptiveCard',
@@ -43,7 +44,12 @@ export default {
       type: String,
       required: false,
       default: null
-    }
+    },
+    useMarkdown: {
+      type: Boolean,
+      required: false,
+      default: false,
+    },
   },
   data () {
     return {
@@ -85,6 +91,13 @@ export default {
       this.cardHolder.parse(this.cardParsed)
     } else {
       this.cardHolder.parse(this.cardParsed)
+    }
+
+    if (!AdaptiveCards.AdaptiveCard.onProcessMarkdown) {
+      AdaptiveCards.AdaptiveCard.onProcessMarkdown = (text, result) => {
+        result.outputHtml = new markdown.default().render(text);
+        result.didProcess = true;
+      };
     }
 
     this.cardHolder.onExecuteAction = (action) => {
