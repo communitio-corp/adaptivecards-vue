@@ -215,6 +215,7 @@ a.ac-anchor:visited:active {
 import * as AdaptiveCards from 'adaptivecards'
 import * as ACData from 'adaptivecards-templating'
 import HostConfig from '../assets/exampleHostConfig.json'
+import * as Markdown from 'markdown-it'
 
 export default {
   name: 'AdaptiveCard',
@@ -238,6 +239,11 @@ export default {
       type: Boolean,
       required: true,
       default: true
+    },
+    useMarkdown: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
   data () {
@@ -283,6 +289,7 @@ export default {
     }
   },
   mounted () {
+    this.setUpMarkdownIt()
     this.renderCard()
   },
   methods: {
@@ -313,6 +320,15 @@ export default {
       this.cardElement = this.cardHolder.render()
       this.$el.innerHTML = ''
       this.$el.appendChild(this.cardElement)
+    },
+    setUpMarkdownIt () {
+      if (this.useMarkdown && !AdaptiveCards.AdaptiveCard.onProcessMarkdown) {
+        const md = new Markdown()
+        AdaptiveCards.AdaptiveCard.onProcessMarkdown = (text, result) => {
+          result.outputHtml = md.render(text)
+          result.didProcess = true
+        }
+      }
     }
   }
 }
