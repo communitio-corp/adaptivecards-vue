@@ -23,7 +23,6 @@
         :data="data"
         :use-templating="true"
         :host-config="config"
-        :use-markdown="true"
         @onActionClicked="onItemClick"
       />
     </div>
