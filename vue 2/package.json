@@ -1,8 +1,8 @@
 {
-  "name": "@madewithcards/adaptivecards-vue",
+  "name": "@communitio-corp/adaptivecards-vue",
   "description": "Render cards in vue easily",
-  "version": "2.10.0",
-  "author": "Tim Cadenbach <tim@madewithcards.io>",
+  "version": "2.10.2",
+  "author": "Daisuke Shimada <dice.k1984@gmail.com>",
   "license": "MIT",
   "main": "dist/adaptivecards-vue.js",
   "files": [
