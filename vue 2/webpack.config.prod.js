@@ -14,9 +14,6 @@ module.exports = merge(baseConfig, {
     publicPath: '/dist/',
     filename: 'adaptivecards-vue.js'
   },
-  externals: {
-    'vue': 'Vue'
-  },
   module: {
     rules: [
       {
