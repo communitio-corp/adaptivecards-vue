@@ -27,10 +27,8 @@
     "lint": "eslint --ext .js,.vue ."
   },
   "dependencies": {
-    "adaptive-expressions": "^4.15.0",
     "adaptivecards": "^2.10.0",
-    "adaptivecards-templating": "^2.2.0",
-    "markdown-it": "^13.0.1",
+    "markdown-it": "^13.0.2",
     "vue": "^2.5.21"
   },
   "postcss": {

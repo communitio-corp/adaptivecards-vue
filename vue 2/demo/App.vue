@@ -21,7 +21,6 @@
       <adaptive-cards
         :card="card"
         :data="data"
-        :use-templating="true"
         :use-markdown="true"
         :host-config="config"
         @onActionClicked="onItemClick"
