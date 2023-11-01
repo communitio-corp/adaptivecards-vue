@@ -242,13 +242,11 @@ export default {
   },
   data () {
     return {
-      cardHolder: null,
-      cardRemoteTemplate: null
+      cardHolder: null
     }
   },
   computed: {
     cardParsed () {
-      if (this.cardRemoteTemplate != null) return this.cardRemoteTemplate
       return this.card
     },
     dataParsed () {
@@ -290,6 +288,8 @@ export default {
     renderCard () {
       this.cardHolder = new AdaptiveCards.AdaptiveCard()
       this.cardHolder.hostConfig = this.hostConfigParsed
+
+      this.cardHolder.parse(this.cardParsed)
 
       this.cardHolder.onExecuteAction = (action) => {
         this.$emit('onActionClicked', action, action.data)
