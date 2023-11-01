@@ -7,16 +7,13 @@
 
 <script>
 import * as AdaptiveCards from 'adaptivecards/dist/adaptivecards'
-import { Template, EvaluationContext } from 'adaptivecards-templating/dist/adaptivecards-templating'
 import HostConfig from '../assets/exampleHostConfig.json'
 import axios from 'axios'
 
 export default {
   name: 'AdaptiveCard',
   components: {
-    AdaptiveCards,
-    Template,
-    EvaluationContext
+    AdaptiveCards
   },
   props: {
     card: {
@@ -33,11 +30,6 @@ export default {
       type: Object | String,
       required: false,
       default: ''
-    },
-    useTemplating: {
-      type: Boolean,
-      required: true,
-      default: true
     },
     cardUrl: {
       type: String,
@@ -71,21 +63,7 @@ export default {
     // Use Default Host Config if not passed
     this.cardHolder.HostConfig = this.hostConfig == '' ? JSON.stringify(HostConfig) : this.hostConfig
 
-    if (this.useTemplating && this.data == null) {
-      this.$el.remove()
-      throw new Error('When using templating data is required')
-    }
-
-    if (this.useTemplating && this.data != null) {
-      let template = new Template(this.cardParsed)
-      let context = new EvaluationContext()
-      context.$root = this.dataParsed
-      this.cardParsed = template.expand(context)
-
-      this.cardHolder.parse(this.cardParsed)
-    } else {
-      this.cardHolder.parse(this.cardParsed)
-    }
+    this.cardHolder.parse(this.cardParsed)
 
     this.cardHolder.onExecuteAction = (action) => {
       this.$emit('onActionClicked', action, action.data)

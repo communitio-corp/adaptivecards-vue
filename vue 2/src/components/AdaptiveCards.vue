@@ -213,7 +213,6 @@ a.ac-anchor:visited:active {
 
 <script>
 import * as AdaptiveCards from 'adaptivecards'
-import * as ACData from 'adaptivecards-templating'
 import HostConfig from '../assets/exampleHostConfig.json'
 import * as Markdown from 'markdown-it'
 
@@ -235,11 +234,6 @@ export default {
       required: false,
       default: ''
     },
-    useTemplating: {
-      type: Boolean,
-      required: true,
-      default: true
-    },
     useMarkdown: {
       type: Boolean,
       required: false,
@@ -248,13 +242,11 @@ export default {
   },
   data () {
     return {
-      cardHolder: null,
-      cardRemoteTemplate: null
+      cardHolder: null
     }
   },
   computed: {
     cardParsed () {
-      if (this.cardRemoteTemplate != null) return this.cardRemoteTemplate
       return this.card
     },
     dataParsed () {
@@ -297,21 +289,7 @@ export default {
       this.cardHolder = new AdaptiveCards.AdaptiveCard()
       this.cardHolder.hostConfig = this.hostConfigParsed
 
-      if (this.useTemplating && this.data == null) {
-        this.$el.remove()
-        throw new Error('When using templating data is required')
-      }
-
-      if (this.useTemplating && this.data != null) {
-        let template = new ACData.Template(this.cardParsed)
-        var context = {}
-        context.$root = this.dataParsed
-
-        var cardToRender = template.expand(context)
-        this.cardHolder.parse(cardToRender)
-      } else {
-        this.cardHolder.parse(cardToRender)
-      }
+      this.cardHolder.parse(this.cardParsed)
 
       this.cardHolder.onExecuteAction = (action) => {
         this.$emit('onActionClicked', action, action.data)

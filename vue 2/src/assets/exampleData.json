@@ -22,7 +22,7 @@
         },
         {
             "key": "Use anywhere",
-            "value": "'<adaptive-card :card='card' :data='data' :useTemplating='true'  />"
+            "value": "'<adaptive-card :card='card' :data='data' />"
         }
     ]
 }
